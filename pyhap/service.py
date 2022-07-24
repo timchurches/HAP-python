@@ -138,4 +138,6 @@ class Service:
         service = cls(type_id, name)
         for char_name in json_dict["RequiredCharacteristics"]:
             service.add_characteristic(loader.get_char(char_name))
+        for char_name in json_dict["OptionalCharacteristics"]:
+            service.add_characteristic(loader.get_char(char_name))
         return service
